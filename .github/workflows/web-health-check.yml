@@ -3,7 +3,7 @@ name: Daily Selenium Web UI Automation
 on:
   workflow_dispatch:          # Manual trigger
   schedule:
-    - cron: '0 9 * * *'       # Runs daily at 9 AM UTC
+    - cron: '30 4 * * *'      # Runs daily at 10 AM IST
 
 jobs:
   selenium-tests:
