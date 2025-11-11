@@ -1,4 +1,4 @@
-package Listener;
+package EventListeners;
 
 import Base.BaseClass;
 import io.qameta.allure.Attachment;
@@ -7,6 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
 
 public class AllureScreenShot extends BaseClass implements ITestListener {
 
@@ -19,7 +20,6 @@ public class AllureScreenShot extends BaseClass implements ITestListener {
         FunctionName(result.getMethod().getConstructorOrMethod().getName());
     }
 
-
     @Attachment(value = "Page Screenshot", type = "image/png")
     public static byte[] ScreenShotOnTestFailure(WebDriver driver) {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
@@ -31,7 +31,7 @@ public class AllureScreenShot extends BaseClass implements ITestListener {
         return message;
     }
 
-    public void FunctionName(String FunctionName) {
-        System.out.println("---------------" + FunctionName + "---------------");
+    public void FunctionName(String FName) {
+        System.out.println("---------------" + FName + "---------------");
     }
 }

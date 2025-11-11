@@ -127,7 +127,7 @@ public class KnowledgeGymGermanyPage {
         wait.until(ExpectedConditions.elementToBeClickable(QuestionLink));
         clickQuestionLink();
         wait.until(ExpectedConditions.visibilityOfElementLocated(QuestionListHeading));
-        return Objects.equals(driver.findElement(QuestionListHeading).getText(), "Question List");
+        return Objects.equals(driver.findElement(QuestionListHeading).getText(), "Question List==");
     }
 
     // Navigates to the Modules List page and verifies the heading

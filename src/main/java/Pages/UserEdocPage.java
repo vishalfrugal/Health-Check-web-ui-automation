@@ -93,7 +93,7 @@ public class UserEdocPage {
     public boolean Home() {
         navigateToHomePage();
         wait.until(ExpectedConditions.elementToBeClickable(HomeHeading));
-        return Objects.equals(driver.findElement(HomeHeading).getText(), "Welcome to the E-DOC");
+        return Objects.equals(driver.findElement(HomeHeading).getText(), "Welcome to the E-DOC=");
     }
 
     // Navigates to the Assignment page and verifies the heading is displayed
