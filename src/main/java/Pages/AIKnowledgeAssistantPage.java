@@ -182,7 +182,7 @@ public class AIKnowledgeAssistantPage {
         clickAnalyticsLink();
         wait.until(ExpectedConditions.visibilityOfElementLocated(analyticsHeading));
         String headingText = driver.findElement(analyticsHeading).getText();
-        return Objects.equals(headingText, " Analytics ");
+        return Objects.equals(headingText, "Analytics");
     }
 
     // Function: Navigate to Subscription Plans page and validate heading

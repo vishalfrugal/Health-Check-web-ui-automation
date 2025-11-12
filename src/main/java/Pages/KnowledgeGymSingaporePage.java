@@ -111,7 +111,7 @@ public class KnowledgeGymSingaporePage {
 
     // Verifies that the User List page is displayed by checking the heading text
     public boolean userList() {
-        return Objects.equals(driver.findElement(UserListHeading).getText(), "User List=");
+        return Objects.equals(driver.findElement(UserListHeading).getText(), "User List");
     }
 
     // Navigates to the Group List page and verifies the heading is displayed correctly
