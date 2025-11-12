@@ -14,9 +14,11 @@ public class BaseClass {
         String osName = System.getProperty("os.name").toLowerCase();
         String ciEnv = System.getenv("GITHUB_ACTIONS"); // non-null when running in CI
 
+
         if (ciEnv != null || osName.contains("linux")) {
             // ✅ CI / GitHub Actions setup
             options.addArguments("--headless=new");
+            options.addArguments("--window-size=1920,1080");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");

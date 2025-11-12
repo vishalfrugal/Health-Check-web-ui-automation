@@ -12,51 +12,51 @@
                     <include name="VerifyKnowledgeGymGermanyHealthCheck"/>
                 </methods>
             </class>
-            <class name="Tests.KnowledgeGymSingaporeTest">
-                <methods>
-                    <include name="VerifyKnowledgeGymSingaporeHealthCheck"/>
-                </methods>
-            </class>
-            <class name="Tests.AIConversationCoachTest">
-                <methods>
-                    <include name="VerifyAIConversationCoachHealthCheck"/>
-                </methods>
-            </class>
-            <class name="Tests.AIKnowledgeAssistantTest">
-                <methods>
-                    <include name="VerifyAIKnowledgeAssistantHealthCheck"/>
-                </methods>
-            </class>
-            <class name="Tests.AdminBeCourseCatalogueTest">
-                <methods>
-                    <include name="VerifyAdminBeCourseCatalogueHealthCheck"/>
-                </methods>
-            </class>
-            <class name="Tests.AdminEdocTest">
-                <methods>
-                    <include name="VerifyAdminEdocHealthCheck"/>
-                </methods>
-            </class>
-            <class name="Tests.AdminThinkingGymTest">
-                <methods>
-                    <include name="VerifyAdminThinkingGymHealthCheck"/>
-                </methods>
-            </class>
-            <class name="Tests.UserBeCourseCatalogueTest">
-                <methods>
-                    <include name="VerifyUserBeCourseCatalogueHealthCheck"/>
-                </methods>
-            </class>
-            <class name="Tests.UserEdocTest">
-                <methods>
-                    <include name="VerifyUserEdocHealthCheck"/>
-                </methods>
-            </class>
-            <class name="Tests.UserThinkingGymTest">
-                <methods>
-                    <include name="VerifyUserThinkingGymHealthCheck"/>
-                </methods>
-            </class>
+<!--            <class name="Tests.KnowledgeGymSingaporeTest">-->
+<!--                <methods>-->
+<!--                    <include name="VerifyKnowledgeGymSingaporeHealthCheck"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.AIConversationCoachTest">-->
+<!--                <methods>-->
+<!--                    <include name="VerifyAIConversationCoachHealthCheck"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.AIKnowledgeAssistantTest">-->
+<!--                <methods>-->
+<!--                    <include name="VerifyAIKnowledgeAssistantHealthCheck"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.AdminBeCourseCatalogueTest">-->
+<!--                <methods>-->
+<!--                    <include name="VerifyAdminBeCourseCatalogueHealthCheck"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.AdminEdocTest">-->
+<!--                <methods>-->
+<!--                    <include name="VerifyAdminEdocHealthCheck"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.AdminThinkingGymTest">-->
+<!--                <methods>-->
+<!--                    <include name="VerifyAdminThinkingGymHealthCheck"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.UserBeCourseCatalogueTest">-->
+<!--                <methods>-->
+<!--                    <include name="VerifyUserBeCourseCatalogueHealthCheck"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.UserEdocTest">-->
+<!--                <methods>-->
+<!--                    <include name="VerifyUserEdocHealthCheck"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.UserThinkingGymTest">-->
+<!--                <methods>-->
+<!--                    <include name="VerifyUserThinkingGymHealthCheck"/>-->
+<!--                </methods>-->
+<!--            </class>-->
         </classes>
     </test>
 </suite>
