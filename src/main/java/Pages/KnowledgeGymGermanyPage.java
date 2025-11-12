@@ -111,7 +111,7 @@ public class KnowledgeGymGermanyPage {
 
     // Verifies that the user is on the User List page by checking the heading
     public boolean userList() {
-        return Objects.equals(driver.findElement(UserListHeading).getText(), "User List=");
+        return Objects.equals(driver.findElement(UserListHeading).getText(), "User List");
     }
 
     // Navigates to the Group List page and verifies the heading
