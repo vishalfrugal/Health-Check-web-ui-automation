@@ -1,1 +1,1 @@
-[{"uid":"42dd32f84d066c3a","name":"Test: Login successfully using valid credentials and checking health of all pages","time":{"start":1763095495167,"stop":1763095509273,"duration":14106},"status":"broken","severity":"critical"}]
+[{"uid":"dea18670568c0b7b","name":"Test: Login successfully using valid credentials and checking health of all pages","time":{"start":1763181823030,"stop":1763181844144,"duration":21114},"status":"passed","severity":"critical"}]
