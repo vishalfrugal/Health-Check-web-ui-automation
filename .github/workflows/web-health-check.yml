@@ -49,7 +49,7 @@ jobs:
           sudo ln -s /opt/allure-2.27.0/bin/allure /usr/bin/allure
           allure --version
 
-      # Step 6 — Run Selenium Tests in headless mode
+      # Step 6 — Run Selenium Tests
       - name: Run Selenium Tests
         run: mvn clean test -Dsurefire.suiteXmlFiles=testng.xml -Dselenium.browser=headless
 
@@ -58,7 +58,7 @@ jobs:
         if: always()
         run: allure generate allure-results --clean -o allure-report
 
-      # Step 8 — Upload Allure Report
+      # Step 8 — Upload Allure Report Artifact
       - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v4
@@ -66,22 +66,29 @@ jobs:
           name: allure-report
           path: allure-report
 
-      # Step 9 — Deploy Allure Report to GitHub Pages
+      # Step 9 — MOVE REPORT INTO UNIQUE RUN FOLDER
+      - name: Store report in numbered folder
+        if: always()
+        run: |
+          mkdir -p run-history
+          mv allure-report run-history/${{ github.run_number }}
+
+      # Step 10 — Deploy Allure Report to GitHub Pages
       - name: Deploy Allure Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
+          publish_dir: ./run-history
 
-      # Step 10 - Set deployment URL (unique per run)
+      # Step 11 — Set deployment URL properly
       - name: Set Deployment URL
         if: always()
-        run: | 
-          echo "DEPLOYMENT_URL=${{ env.BASE_URL }}/${{ github.run_number }}/#" >> $GITHUB_ENV echo "Deployment URL: ${{ env.BASE_URL }}/${{ github.run_number }}/#"
+        run: |
+          echo "DEPLOYMENT_URL=${{ env.BASE_URL }}/${{ github.run_number }}/#" >> $GITHUB_ENV
           echo "Deployment URL: ${{ env.BASE_URL }}/${{ github.run_number }}/#"
 
-      # Step 11 — Send Slack Notification
+      # Step 12 — Send Slack Notification
       - name: Send Slack Notification
         if: always()
         uses: rtCamp/action-slack-notify@v2
@@ -89,8 +96,8 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ job.status }}
           SLACK_TITLE: "Selenium Automation Report"
-          SLACK_MESSAGE: | 
-            *Project:* ${{ github.repository }} 
-            *Run ID:* ${{ github.run_number }} 
-            *Status:* ${{ job.status }} 
-            *Allure Report:* ${{ env.BASE_URL }}/${{ github.run_number }}/#
+          SLACK_MESSAGE: |
+            *Project:* ${{ github.repository }}
+            *Run ID:* ${{ github.run_number }}
+            *Status:* ${{ job.status }}
+            *Allure Report:* ${{ env.DEPLOYMENT_URL }}
