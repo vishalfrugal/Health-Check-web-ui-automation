@@ -73,3 +73,24 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
+
+      # Step 10 - Set deployment URL (unique per run)
+      - name: Set Deployment URL
+        if: always()
+        run: | 
+          echo "DEPLOYMENT_URL=${{ env.BASE_URL }}/${{ github.run_number }}/#" >> $GITHUB_ENV echo "Deployment URL: ${{ env.BASE_URL }}/${{ github.run_number }}/#"
+          echo "Deployment URL: ${{ env.BASE_URL }}/${{ github.run_number }}/#"
+
+      # Step 11 — Send Slack Notification
+      - name: Send Slack Notification
+        if: always()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_TITLE: "Selenium Automation Report"
+          SLACK_MESSAGE: | 
+            *Project:* ${{ github.repository }} 
+            *Run ID:* ${{ github.run_number }} 
+            *Status:* ${{ job.status }} 
+            *Allure Report:* ${{ env.BASE_URL }}/${{ github.run_number }}/#

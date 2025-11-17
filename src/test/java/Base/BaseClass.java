@@ -14,7 +14,6 @@ public class BaseClass {
         String osName = System.getProperty("os.name").toLowerCase();
         String ciEnv = System.getenv("GITHUB_ACTIONS"); // non-null when running in CI
 
-
         if (ciEnv != null || osName.contains("linux")) {
             // ✅ CI / GitHub Actions setup
             options.addArguments("--headless=new");
